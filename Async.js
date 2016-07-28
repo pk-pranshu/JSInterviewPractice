@@ -1,7 +1,6 @@
 Async.js
 
 
-
 // Quick Examples
 
 async.map(['file1','file2','file3'], fs.stat, function(err, results){
