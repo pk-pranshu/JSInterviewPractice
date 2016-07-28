@@ -22,7 +22,8 @@ var promise = new Promise(function(resolve, reject) {
 });
 
 
-// The promise constructor takes one argument, a callback with two parameters, resolve and reject. Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject.
+// The promise constructor takes one argument, a callback with two parameters, resolve and reject. 
+//Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject.
 
   // Return a new promise.
   return new Promise(function(resolve, reject) {
@@ -64,7 +65,8 @@ get('story.json').then(function(response) {
 
 
 // Promise.all
-// Think about JavaScript loaders:  there are times when you trigger multiple async interactions but only want to respond when all of them are completed -- that's where Promise.all comes in.  The Promise.all method takes an array of promises and fires one callback once they are all resolved:
+// Think about JavaScript loaders:  there are times when you trigger multiple async interactions but only want to respond when all of them are completed -- that's where Promise.all comes in.  
+//The Promise.all method takes an array of promises and fires one callback once they are all resolved:
 
 Promise.all([promise1, promise2]).then(function(results) {
 	// Both promises resolved
@@ -98,7 +100,10 @@ promise1.then(function(value)
         }
     }
 });
-This works because the fulfilled/rejected callbacks will fire immediately if they are attached after a Promise has been fulfilled or rejected. Therefore, even if promise3 is fulfilled first, its fulfillment callback will not execute until it has been attached, which does not happen until promise1 and promise2 have been fulfilled. The drawback to this approach is that the nested function expressions can be a bit confusing. With a bit of refactoring, we can eliminate the need for nested functions;
+
+// This works because the fulfilled/rejected callbacks will fire immediately if they are attached after a Promise has been fulfilled or rejected.
+//  Therefore, even if promise3 is fulfilled first, its fulfillment callback will not execute until it has been attached, which does not happen until promise1 and promise2 have been fulfilled. 
+//  The drawback to this approach is that the nested function expressions can be a bit confusing. With a bit of refactoring, we can eliminate the need for nested functions;
 
 var value1, value2;
 
@@ -122,5 +127,14 @@ function handlePromise3Fulfillment(value)
 }
 
 promise1.then(handlePromise1Fulfillment);
+
+
+
+// Promise vs calbacks -
+
+// The main advantage of a promise over a callback is that you have an instance of an object that represents that deferred work. 
+// Let's say for example that you wanted to do two things in parallel after some asynchronous action. 
+// With callbacks, you would have to create a new callback that managed that flow. 
+// With promises, you can get a promise from the first action and pass it to methods that do the next action and get promises back.
 
 
