@@ -30,8 +30,6 @@ correct way:-  var getCarBrand = car.getBrand.bind(car);
 
 2. this Used in Callbacks 
 
-<button id="btn" type="button">Get the car's brand</button>
-
 var car = {
   brand: "Nissan",
   getBrand: function(){
