@@ -113,7 +113,8 @@ this refers to the global object in the following cases:
 	in functions that are not methods of objects
 	in functions that are not object constructors
 When a function is called as a property on a parent object, this refers to the parent object.
-When a function is called using call() or apply(), or bind(), this refers to the first argument passed to these methods. If the first argument is null or not an object, this refers to the global object.
+When a function is called using call() or apply(), or bind(), this refers to the first argument passed to these methods. 
+If the first argument is null or not an object, this refers to the global object.
 When a function is called with the new operator, this refers to the newly created object.
 When an arrow function (introduced in ECMAScript 6) is used, this relies on lexical scope and refers to the parent object.
 
