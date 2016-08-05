@@ -4,18 +4,29 @@ var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce odio
 
 
         var substr= lorem.split(" ");
-        
-        function repeating() {
-            var count =0;
-            var map={};
-            for(var i=0;i<substr.length;i++){
-            	var key = substr[i];
-                if(map.hasOwnProperty(key)){
-            		map[key]++;
-            	else
-            		map[key]=1;	
-                
-            }
-            
-            
+        var map={};
+        var arr2 = [];
+        var count =0;
+        for(var i=0;i<substr.length;i++){
+        var key = substr[i];
+            if(map.hasOwnProperty(key))
+            	map[key]++;
+           	else
+            	map[key]=1;	   
         }
+
+      
+
+         for(var j in map){
+         	if(map.hasOwnProperty(j)){
+         		arr2.push([j,map[j]]);
+         	}
+         }		
+         	   
+        arr2.sort(function(a,b){
+         	return b[1]-a[1];
+         });
+        
+        for(var k=0;k<5;k++){
+        	console.log(arr2[k][0]);
+        }  
