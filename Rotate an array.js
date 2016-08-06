@@ -121,5 +121,40 @@ rotate3([1,2,3,4,5,6],3);
 
 // will even take negative values
 
+function rotate(array,n){
+  n = n % array.length;
+  return array.slice(-n).concat(array.slice(0,-n));
+}
+
+
+
+
+
+// var data = [1, 2, 3, 4, 5];
+
+// Test.assertSimilar(rotate(data, 1)  , [5, 1, 2, 3, 4])
+// Test.assertSimilar(rotate(data, 2)  , [4, 5, 1, 2, 3])
+// Test.assertSimilar(rotate(data, 3)  , [3, 4, 5, 1, 2])
+// Test.assertSimilar(rotate(data, 4)  , [2, 3, 4, 5, 1])
+// Test.assertSimilar(rotate(data, 5)  , [1, 2, 3, 4, 5])
+
+// Test.assertSimilar(rotate(data, 0)  , [1, 2, 3, 4, 5])
+
+// Test.assertSimilar(rotate(data, -1) , [2, 3, 4, 5, 1])
+// Test.assertSimilar(rotate(data, -2) , [3, 4, 5, 1, 2])
+// Test.assertSimilar(rotate(data, -3) , [4, 5, 1, 2, 3])
+// Test.assertSimilar(rotate(data, -4) , [5, 1, 2, 3, 4])
+// Test.assertSimilar(rotate(data, -5) , [1, 2, 3, 4, 5])
+
+// Test.assertSimilar(rotate(['a', 'b', 'c'], 1), ['c', 'a', 'b'])
+// Test.assertSimilar(rotate([1.0, 2.0, 3.0], 1), [3.0, 1.0, 2.0])
+// Test.assertSimilar(rotate([true, true, false], 1), [false, true, true])
+
+// var data = [1, 2, 3, 4, 5]
+
+// Test.assertSimilar(rotate(data, 7), [4, 5, 1, 2, 3])
+// Test.assertSimilar(rotate(data, 11), [5, 1, 2, 3, 4])
+// Test.assertSimilar(rotate(data, 12478), [3, 4, 5, 1, 2])
+
 
 
