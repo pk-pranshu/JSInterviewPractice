@@ -16,7 +16,7 @@
 // Push array elements into that temporary array
 // Copy that temporary array into  original array
 
-// Observe above demo. It will take O(n) space and O(n) time
+// It will take O(n) space and O(n) time
 
 
 function rotateArray(nums,k){
@@ -54,6 +54,7 @@ function rotateArray(nums,k){
 
 // It will take O(1) space and O(n*k) time
 
+
 function rotateArray(nums,k){
 	if(isNaN(k) || k<0)	
 		throw "error";
@@ -81,4 +82,44 @@ function rotateArray(nums,k){
 // Method 3  -
 
 // Using Reversal
-// Divide array into 2 parts based on given order. Reverse first part and then reverse second, then reverse whole array  
+// Divide array into 2 parts based on given order. Reverse first part and then reverse second, then reverse whole array 
+
+//  It will take O(1) space and O(n) time
+
+
+function rotateArray(nums,k){
+	if(isNaN(k) || k<0)	
+		throw "error";
+	if(nums.length==0)	
+		throw "error";
+	k=k%nums.length;
+
+	var a = nums.length - k;
+
+	reverse(nums, 0, a-1);
+    reverse(nums, a, nums.length-1);
+    reverse(nums, 0, nums.length-1);
+
+ console.log(nums);
+}
+
+function reverse(nums, left, right){
+    while(left < right){
+        var temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+        left++;
+        right--;
+    }   
+}
+
+rotate3([1,2,3,4,5,6],3);
+
+
+
+// Method 4 -
+
+// will even take negative values
+
+
+
