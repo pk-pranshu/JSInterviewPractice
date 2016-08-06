@@ -121,6 +121,9 @@ rotate3([1,2,3,4,5,6],3);
 
 // will even take negative values
 
+//If n is greater than 0 it should rotate the array to the right. 
+//If n is less than 0 it should rotate the array to the left. If n is 0, then it should return the array unchanged.
+
 function rotate(array,n){
   n = n % array.length;
   return array.slice(-n).concat(array.slice(0,-n));
